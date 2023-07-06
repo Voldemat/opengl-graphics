@@ -6,9 +6,13 @@ file(GLOB files
 )
 add_executable(main ${files})
 
+if (APPLE)
+    set(FRAMEWORKS "-framework Cocoa -framework IOKit")
+endif(APPLE)
+
 include_directories(${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(
     main LINK_PUBLIC
+    ${FRAMEWORKS}
     ${CMAKE_SOURCE_DIR}/libs/libglfw3.a
-    "-framework Cocoa -framework IOKit"
 )
