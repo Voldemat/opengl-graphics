@@ -7,12 +7,15 @@ file(GLOB files
 add_executable(main ${files})
 
 if (APPLE)
-    set(FRAMEWORKS "-framework Cocoa -framework IOKit")
+    set(PLATFORM_LINKS "-framework Cocoa -framework IOKit")
 endif(APPLE)
+if (LINUX)
+    set(PLATFORM_LINKS "-lGL")
+endif(LINUX)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(
     main LINK_PUBLIC
     ${CMAKE_SOURCE_DIR}/libs/libglfw3.a
-    ${FRAMEWORKS}
+    ${PLATFORM_LINKS}
 )
