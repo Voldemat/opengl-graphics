@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: "Install opengl"
+      run: apt install freeglut3-dev
     - uses: actions/checkout@v3
 
     - name: Configure CMake
