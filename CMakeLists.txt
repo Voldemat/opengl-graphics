@@ -13,6 +13,6 @@ endif(APPLE)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(
     main LINK_PUBLIC
-    ${FRAMEWORKS}
     ${CMAKE_SOURCE_DIR}/libs/libglfw3.a
+    ${FRAMEWORKS}
 )
