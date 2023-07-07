@@ -7,11 +7,11 @@ file(GLOB files
 add_executable(main ${files})
 
 if (APPLE)
-    set(PLATFORM_LINKS "-framework Cocoa -framework IOKit")
+    set(PLATFORM_LINKS "-framework CoreVideo -framework IOKit -framework Cocoa -framework Carbon")
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/arm64/libglfw3.a)
 endif(APPLE)
 if (UNIX AND NOT APPLE)
-    set(PLATFORM_LINKS "-lGL -lX11")
+    set(PLATFORM_LINKS "-lX11")
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/x86_64/libglfw3.a)
 endif(UNIX AND NOT APPLE)
 
