@@ -10,10 +10,10 @@ if (APPLE)
     set(PLATFORM_LINKS "-framework Cocoa -framework IOKit")
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/arm64/libglfw3.a)
 endif(APPLE)
-if (LINUX)
+if (UNIX AND NOT APPLE)
     set(PLATFORM_LINKS "-lGL -lxrandr -lxinerama -lxcursor -lxi")
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/x86_64/libglfw3.a)
-endif(LINUX)
+endif(UNIX AND NOT APPLE)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(
