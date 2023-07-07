@@ -11,7 +11,7 @@ if (APPLE)
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/arm64/libglfw3.a)
 endif(APPLE)
 if (UNIX AND NOT APPLE)
-    set(PLATFORM_LINKS "-lGL -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lrt -lm -pthread")
+    set(PLATFORM_LINKS "-ldl -lGL -lX11 -lXi -lXrandr -lXxf86vm -lXinerama -lXcursor -lrt -lm -pthread")
     set(GLFW_LINK ${CMAKE_SOURCE_DIR}/libs/glfw/x86_64/libglfw3.a)
 endif(UNIX AND NOT APPLE)
 
