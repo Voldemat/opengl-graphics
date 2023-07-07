@@ -18,6 +18,6 @@ endif(UNIX AND NOT APPLE)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(
     main LINK_PUBLIC
-    ${PLATFORM_LINKS}
     ${GLFW_LINK}
+    ${PLATFORM_LINKS}
 )
