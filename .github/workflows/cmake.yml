@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "Install opengl"
-      run: sudo apt install freeglut3-dev
+    - name: "Install dependencies"
+      run: sudo apt install freeglut3-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
     - uses: actions/checkout@v3
 
     - name: Configure CMake
